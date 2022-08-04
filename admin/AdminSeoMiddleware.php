@@ -9,7 +9,8 @@ class AdminSeoMiddleware
 {
     public function handle(Request $request, Closure $next)
     {
-        config()->set('seotools.meta.defaults.title', 'Nutergia Admin');
+        $siteName = config('app.name');
+        config()->set('seotools.meta.defaults.title', "$siteName Admin");
         return $next($request);
     }
 }

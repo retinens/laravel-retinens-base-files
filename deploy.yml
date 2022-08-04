@@ -15,7 +15,7 @@ jobs:
       fail-fast: false
       matrix:
         operating-system: [ ubuntu-20.04 ]
-        php-versions: [ '8.0' ]
+        php-versions: [ '8.1' ]
 
     steps:
       - uses: actions/checkout@v2
@@ -80,7 +80,7 @@ jobs:
           DIGITALOCEAN_SPACES_SECRET: ${{ secrets.DIGITALOCEAN_SPACES_SECRET }}
           DIGITALOCEAN_SPACES_REGION: ams3
           DIGITALOCEAN_SPACES_ENDPOINT: https://ams3.digitaloceanspaces.com
-          DIGITALOCEAN_SPACES_BUCKET: footuro
+          DIGITALOCEAN_SPACES_BUCKET: {bucketName}
           LASSO_ROOT_FOLDER: lasso
 
       - name: Trigger develop deployment
