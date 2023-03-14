@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use Domain\Users\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;
 
@@ -14,7 +15,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $user = \Domain\Users\Models\User::create([
+        $user = User::create([
             'email' => 'web@retinens.com',
             'first_name' => 'Web',
             'last_name' => 'Admin',

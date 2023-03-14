@@ -5,7 +5,7 @@ import { viteStaticCopy } from 'vite-plugin-static-copy'
 import fs from 'fs';
 import path from 'path'
 
-const host = 'HOSTNAME.test';
+const host = 'sma-belgium.test';
 const homedir = require('os').homedir();
 export default defineConfig({
     plugins: [
@@ -13,6 +13,8 @@ export default defineConfig({
             input: [
                 'resources/app/sass/app.scss',
                 'resources/app/js/app.js',
+                'resources/admin/sass/admin.scss',
+                'resources/admin/js/admin.js',
             ],
             refresh: true,
         }),
@@ -30,6 +32,9 @@ export default defineConfig({
             '~bootstrap': path.resolve(__dirname, 'node_modules/bootstrap'),
             '~@themesberg': path.resolve(__dirname, 'node_modules/@themesberg'),
             '~datatables.net-bs5': path.resolve(__dirname, 'node_modules/datatables.net-bs5'),
+            '~select2': path.resolve(__dirname, 'node_modules/select2'),
+            "~select2-bootstrap-5-theme/src/include-all": path.resolve(__dirname, 'node_modules/select2-bootstrap-5-theme/src/include-all'),
+            "~trix/dist/trix": path.resolve(__dirname, 'node_modules/trix/dist/trix'),
         }
     },
     server: {
