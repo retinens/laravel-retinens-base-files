@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Admin\Controllers;
+namespace App\Admin\Users\Controllers;
 
-use App\Admin\Requests\UserRequest;
+use App\Admin\Users\Requests\UserRequest;
 use App\Common\Controllers\Controller;
 use Domain\Users\Actions\StoreUserAdminAction;
 use Domain\Users\Actions\UpdateUserAdminAction;

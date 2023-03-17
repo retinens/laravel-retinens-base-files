@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+
 use App\Admin\Controllers\HomePageController;
 use App\Admin\Middleware\AdminSeoMiddleware;
 use App\Admin\Middleware\IsAdminMiddleware;
