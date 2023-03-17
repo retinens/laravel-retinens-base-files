@@ -11,6 +11,6 @@ Route::group(['as' => 'admin.', 'prefix' => 'admin', 'middleware' => ['auth', Is
     Route::get('logs', [Rap2hpoutre\LaravelLogViewer\LogViewerController::class, 'index']);
     Route::get('/', HomePageController::class)->name('index');
 
+    Route::post("admin-users/{adminUser}/reset-password", [AdminUsersController::class,'resetPassword'])->name('admin-users.reset-password');
     Route::resource('admin-users', AdminUsersController::class);
-    Route::post("admin-users/{admin_user}/reset-password", [AdminUsersController::class,'resetPassword'])->name('admin-users.reset-password');
 });
