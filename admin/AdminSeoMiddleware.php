@@ -9,7 +9,7 @@ class AdminSeoMiddleware
 {
     public function handle(Request $request, Closure $next)
     {
-        $siteName = config('app.name');
+        $siteName = ucfirst(config('app.name'));
         config()->set('seotools.meta.defaults.title', "$siteName Admin");
         return $next($request);
     }
