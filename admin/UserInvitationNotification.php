@@ -32,7 +32,8 @@ class UserInvitationNotification extends Notification
     public function toMail(mixed $notifiable): MailMessage
     {
         $token = app('auth.password.broker')->createToken($notifiable);
-        ;
+
+        DB::table(config('auth.passwords.users.table'))->where('email', $notifiable->email)->delete();
 
         DB::table(config('auth.passwords.users.table'))->insert([
             'email' => $notifiable->email,
