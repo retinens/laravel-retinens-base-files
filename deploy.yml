@@ -3,7 +3,7 @@ name: Deploy build
 on:
   workflow_dispatch:
   push:
-    branches: [ master, develop ]
+    branches: [ main, develop ]
 
 jobs:
   deploy-app:
@@ -88,5 +88,5 @@ jobs:
         run: curl -X POST ${{ secrets.DEVELOP_WEBHOOK }}
 
       - name: Trigger production deployment
-        if: ${{ steps.extract_branch.outputs.branch == 'master' }}
+        if: ${{ steps.extract_branch.outputs.branch == 'main' }}
         run: curl -X POST ${{ secrets.PROD_WEBHOOK }}

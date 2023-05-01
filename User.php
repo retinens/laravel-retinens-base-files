@@ -6,10 +6,12 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable
 {
     use Notifiable;
+    use HasRoles;
 
     /**
      * The attributes that are mass assignable.
@@ -43,7 +45,7 @@ class User extends Authenticatable
 
     public function getFullNameAttribute(): string
     {
-        return $this->first_name.' '.$this->last_name;
+        return trim($this->first_name.' '.$this->last_name);
     }
 
     public function getAvatarUrlAttribute(): string
