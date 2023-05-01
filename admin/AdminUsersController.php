@@ -2,7 +2,7 @@
 
 namespace App\Admin\Users\Controllers;
 
-use App\Admin\Users\Requests\UserRequest;
+use App\Admin\Users\Requests\AdminUserRequest;
 use App\Common\Controllers\Controller;
 use Domain\Users\Actions\StoreUserAdminAction;
 use Domain\Users\Actions\UpdateUserAdminAction;
@@ -25,7 +25,7 @@ class AdminUsersController extends Controller
         return view('admin.pages.admin-users.create');
     }
 
-    public function store(UserRequest $request): RedirectResponse
+    public function store(AdminUserRequest $request): RedirectResponse
     {
         $data = $request->validated();
         if ($adminUser = User::where('email', $data['email'])->first()) {
@@ -48,7 +48,7 @@ class AdminUsersController extends Controller
             ->with(compact('adminUser'));
     }
 
-    public function update(UserRequest $request, User $adminUser): RedirectResponse
+    public function update(AdminUserRequest $request, User $adminUser): RedirectResponse
     {
         $data = $request->validated();
         UpdateUserAdminAction::execute($data, $adminUser);

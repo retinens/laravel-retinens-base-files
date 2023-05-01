@@ -4,7 +4,7 @@ namespace App\Admin\Users\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class AdminUsersRequest extends FormRequest
+class AdminUserRequest extends FormRequest
 {
     public function rules(): array
     {
