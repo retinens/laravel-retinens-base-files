@@ -4,9 +4,10 @@ import { viteStaticCopy } from 'vite-plugin-static-copy'
 
 import fs from 'fs';
 import path from 'path'
+import {homedir} from 'os';
 
 const host = 'sma-belgium.test';
-const homedir = require('os').homedir();
+const homedirPath = homedir();
 export default defineConfig({
     plugins: [
         laravel({
@@ -41,8 +42,8 @@ export default defineConfig({
         host,
         hmr: { host },
         https: {
-            key: fs.readFileSync(`${homedir}/.valet/Certificates/${host}.key`),
-            cert: fs.readFileSync(`${homedir}/.valet/Certificates/${host}.crt`),
+            key: fs.readFileSync(`${homedirPath}/.valet/Certificates/${host}.key`),
+            cert: fs.readFileSync(`${homedirPath}/.valet/Certificates/${host}.crt`),
         },
     },
 });
