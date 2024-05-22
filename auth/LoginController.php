@@ -3,7 +3,6 @@
 namespace App\Auth\Controllers;
 
 use App\Common\Controllers\Controller;
-use App\Providers\RouteServiceProvider;
 use Artesaos\SEOTools\Traits\SEOTools;
 use Illuminate\Contracts\View\View;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
@@ -30,7 +29,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected string $redirectTo = RouteServiceProvider::HOME;
+    protected string $redirectTo = '/';
 
     /**
      * Create a new controller instance.

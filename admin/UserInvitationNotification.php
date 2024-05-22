@@ -2,9 +2,10 @@
 
 namespace Domain\Users\Notifications;
 
-use DB;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class UserInvitationNotification extends Notification
 {
@@ -37,7 +38,7 @@ class UserInvitationNotification extends Notification
 
         DB::table(config('auth.passwords.users.table'))->insert([
             'email' => $notifiable->email,
-            'token' => $token
+            'token' => Hash::make($token),
         ]);
 
         $resetUrl= url(config('app.url').route('password.reset', ['token'=>$token,'email' => $notifiable->email,'set'=> true], false));

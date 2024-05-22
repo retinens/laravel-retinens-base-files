@@ -3,7 +3,6 @@
 namespace App\Auth\Controllers;
 
 use App\Common\Controllers\Controller;
-use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\ResetsPasswords;
 
 class ResetPasswordController extends Controller
@@ -26,5 +25,5 @@ class ResetPasswordController extends Controller
      *
      * @var string
      */
-    protected string $redirectTo = RouteServiceProvider::HOME;
+    protected string $redirectTo = '/';
 }
