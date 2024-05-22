@@ -6,7 +6,7 @@ import fs from 'fs';
 import path from 'path'
 import {homedir} from 'os';
 
-const host = 'sma-belgium.test';
+const host = 'HOSTNAME.test';
 const homedirPath = homedir();
 export default defineConfig({
     plugins: [

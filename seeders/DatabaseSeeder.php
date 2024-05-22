@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'web@retinens.com',
             'first_name' => 'Web',
             'last_name' => 'Admin',
-            'password' => bcrypt(Str::random()),
+            'password' => bcrypt('password'),
             'type' => 'admin'
         ]);
     }
