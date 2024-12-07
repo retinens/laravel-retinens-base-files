@@ -42,8 +42,8 @@ export default defineConfig({
         host,
         hmr: { host },
         https: {
-            key: fs.readFileSync(`${homedirPath}/.valet/Certificates/${host}.key`),
-            cert: fs.readFileSync(`${homedirPath}/.valet/Certificates/${host}.crt`),
+            key: fs.readFileSync(`${homedirPath}/.config/valet/Certificates/${host}.key`),
+            cert: fs.readFileSync(`${homedirPath}/.config/valet/Certificates/${host}.crt`),
         },
     },
 });
