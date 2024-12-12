@@ -6,7 +6,7 @@ import fs from 'fs';
 import path from 'path'
 import {homedir} from 'os';
 
-const host = 'HOSTNAME.test';
+const host = 'gaman.test';
 const homedirPath = homedir();
 export default defineConfig({
     plugins: [
@@ -33,9 +33,10 @@ export default defineConfig({
             '~bootstrap': path.resolve(__dirname, 'node_modules/bootstrap'),
             '~@themesberg': path.resolve(__dirname, 'node_modules/@themesberg'),
             '~datatables.net-bs5': path.resolve(__dirname, 'node_modules/datatables.net-bs5'),
-            '~select2': path.resolve(__dirname, 'node_modules/select2'),
-            "~select2-bootstrap-5-theme/src/include-all": path.resolve(__dirname, 'node_modules/select2-bootstrap-5-theme/src/include-all'),
             "~trix/dist/trix": path.resolve(__dirname, 'node_modules/trix/dist/trix'),
+            "~choices.js": path.resolve(__dirname, 'node_modules/choices.js'),
+            "~swiper": path.resolve(__dirname, 'node_modules/swiper'),
+            "~aos": path.resolve(__dirname, 'node_modules/aos'),
         }
     },
     server: {

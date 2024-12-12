@@ -6,7 +6,7 @@
 <div class="margin-body">
     <div class="container-fluid p-0">
         <div class="row min-height-100vh p-0 m-0">
-            <div class="col-md-6 col-lg-5 col-xl-4 d-flex align-items-center">
+            <div class="col-lg-6 col-xl-4 d-flex align-items-center">
                 <div class="p-lg-5 w-100">
                     @yield('content')
                 </div>
