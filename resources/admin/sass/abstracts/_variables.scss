@@ -1,7 +1,18 @@
 $headings-margin-bottom:0;
 $light: white;
-$font-family-sans-serif: 'Source Sans Pro', sans-serif;
+$font-family-sans-serif: 'Inter', sans-serif;
 $font-family-base: $font-family-sans-serif;
 $link-hover-decoration:none;
-$primary: #0094DA;
+$primary: #61838A;
+$secondary: #FF6300;
+$dark: #06223B;
+$light: #ffffff;
 $info:$primary;
+$font-weight-bold: 600;
+$body-bg:#F2F4F6;
+$card-border-width: 0;
+$card-border-radius: 12px;
+.rounded{
+    border-radius: 12px;
+}
+$btn-border-radius: 12px;

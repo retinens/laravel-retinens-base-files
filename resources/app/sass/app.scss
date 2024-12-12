@@ -6,7 +6,8 @@
 
 // 2. Vendors
 @import "~bootstrap/scss/bootstrap";
-
+@import "~swiper/swiper-bundle.css";
+@import "~aos/dist/aos.css";
 // 3. Base stuff
 @import 'base/base';
 @import 'base/text';
@@ -15,6 +16,8 @@
 @import 'base/auth-pages';
 
 // 5. Components
+@import 'components/container-fluid';
+
 // 6. Page-specific styles
 
 // 7. Themes

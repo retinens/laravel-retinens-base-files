@@ -3,7 +3,7 @@
 @section('content')
     <div class="container-fluid p-0">
         <div class="row min-height-100vh p-0 m-0">
-            <div class="col-md-6 col-lg-5 col-xl-4 p-0 d-flex align-items-center">
+            <div class="col-lg-6 col-xl-4 p-0 d-flex align-items-center">
                 <div class="p-lg-5 p-0 w-100">
                     <div class="p-3 bg-white">
                         <h1 class="mb-2 text-dark">Login</h1>
@@ -38,7 +38,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-7 col-xl-8 d-md-block d-none bg-image login-side-image">
+            <div class="col-lg-6 col-xl-8 d-md-block d-none bg-image " style="background-image: url('https://picsum.photos/1920/1080?random')">
             </div>
         </div>
     </div>

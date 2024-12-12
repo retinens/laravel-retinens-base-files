@@ -1,2 +1,4 @@
-<script src="{{ asset('/backend/js/tinymce.js') }}"></script>
+@once
+    <script src="{{ asset('/build/tinymce/tinymce.min.js') }}"></script>
+@endonce
 

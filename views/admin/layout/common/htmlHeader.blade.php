@@ -12,4 +12,5 @@
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
     @livewireStyles
     @yield('header')
+    @stack('styles')
 </head>

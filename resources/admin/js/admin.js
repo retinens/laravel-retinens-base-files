@@ -7,64 +7,40 @@
 import * as bootstrap from 'bootstrap'
 
 window.bootstrap = bootstrap
-import * as popper from 'popper.js'
+import * as popper from '@popperjs/core'
 
 window.Popper = popper
 import * as jquery from 'jquery'
-
 import * as lodash from 'lodash'
 
 import jQuery from "jquery";
-window.$ = window.jQuery = jQuery
+import $ from 'jquery';
+window.jQuery = jQuery
+window.$ = $
 
 window._ = lodash
-import * as axios from 'axios'
+import axios from 'axios'
 
 window.axios = axios
 //set axios default headers
 
 import "./volt"
 
-import swal from 'sweetalert';
-import "jquery-validation/dist/jquery.validate.min";
-import "jquery-validation/dist/localization/messages_fr";
+import * as toastr from 'toastr';
+window.toastr = toastr;
 
-jQuery.validator.setDefaults({
-    errorElement: 'span',
-    errorPlacement: function (error, element) {
-        error.addClass('invalid-feedback');
-        element.closest('.form-group').append(error);
-    },
-    highlight: function (element, errorClass, validClass) {
-        $(element).addClass('is-invalid');
-    },
-    unhighlight: function (element, errorClass, validClass) {
-        $(element).removeClass('is-invalid');
-    }
-});
+import Choices from 'choices.js'
+window.Choices = Choices
 
-window.toastr = import('toastr')
-
-$(".form-validate").each((function () {
-    $(this).validate({
-        submitHandler: function (form) {
-            form.submit()
-        }
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.choices').forEach((select) => {
+        new Choices(select)
     })
-}));
+})
 
-//select2
 
-import * as select2 from 'select2';
-select2();
-
-$('.select2').select2({
-    theme: 'bootstrap-5'
-});
-
-import DataTable from 'datatables.net';
+import DataTable from "datatables.net-bs5";
 window.DataTable = DataTable;
-// import DataTable from "datatables.net-bs5";
 
 $('.dataTable').dataTable({
     "language": {
@@ -72,25 +48,7 @@ $('.dataTable').dataTable({
     }
 });
 
-$('.deleteConfirm').click(function (event) {
-    event.preventDefault();
-    swal({
-        title: "Etes vous sur de vouloir supprimer l'élément?",
-        icon: "warning",
-        buttons: true,
-        dangerMode: true,
-    })
-        .then((willDelete) => {
-            if (willDelete) {
-                $('#destroy-form-' + $(this).data("id")).submit();
-            }
-        })
-
-});
-
 window.moment = import('moment');
-
-window.toastr = import('toastr/toastr');
 
 
 $(document).ready(function () {
@@ -99,4 +57,22 @@ $(document).ready(function () {
     });
 })
 
-let Trix = import('trix')
+import Alpine from 'alpinejs'
+Alpine.start()
+window.Alpine = Alpine
+import Trix from "trix"
+Trix.config.textAttributes.sup = { tagName: "sup", inheritable: true }
+Trix.config.textAttributes.sub = { tagName: "sub", inheritable: true }
+document.addEventListener("trix-initialize", function(event) {
+    var element = event.target
+    var editor = element.editor
+    var toolbarElement = element.toolbarElement
+    var groupElement = toolbarElement.querySelector(".trix-button-group.trix-button-group--text-tools")
+
+    groupElement.insertAdjacentHTML("beforeend", '<button type="button" class="trix-button" data-trix-attribute="sup"><sup>EXP</sup></button>')
+    groupElement.insertAdjacentHTML("beforeend",'<button type="button" class="trix-button" data-trix-attribute="sub"><sub>IND</sub></button>')
+})
+
+import lozad from 'lozad'
+const observer = lozad();
+observer.observe();
