@@ -36,11 +36,10 @@
                             <i class="fa fa-sign-out dropdown-icon me-2"></i>
                             {{ __('Déconnexion') }}
                         </a>
-                        <a class="dropdown-item d-flex align-items-center" href="{{ route('home') }}">
+                        <a class="dropdown-item d-flex align-items-center" href="{{ route('home') }}" target="_blank">
                             <i class="fa fa-eye dropdown-icon me-2"></i>
                             Voir le site
                         </a>
-
                     </div>
                 </li>
             </ul>

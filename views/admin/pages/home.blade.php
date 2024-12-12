@@ -2,6 +2,6 @@
 
 @section('content')
     <h1>
-        Welcome to Admin Panel
+        Bienvenue sur le CMS
     </h1>
 @stop
