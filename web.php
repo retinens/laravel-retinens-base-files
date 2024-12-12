@@ -1,7 +1,7 @@
 <?php
 
 use App\Website\Controllers\HomePageController;
-use Illuminate\Routing\Route;
+use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomePageController::class, 'index'])->name('home');
 
