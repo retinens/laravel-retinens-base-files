@@ -1,3 +1,4 @@
+{{-- This is the htmlHeader for the APP layout --}}
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +11,7 @@
     <link rel="manifest" href="/site.webmanifest">
     @vite(['resources/app/sass/app.scss'])
     @stack('stylesheets')
+    @stack('styles')
     {{--    <meta name="theme-color" content="#"/>--}}
 </head>
 

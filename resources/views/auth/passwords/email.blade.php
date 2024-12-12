@@ -14,12 +14,12 @@
         <p class="">
             Merci de renseigner votre adresse email pour réinitialiser votre mot de passe.
         </p>
-        @include('app.layout.common.alerts')
         <form method="POST" action="{{ route('password.email') }}" >
             @csrf
             <div class="form-floating mb-3">
                 {{ html()->email('email')->class('form-control')->required()->placeholder('')->attribute('autofocus', true) }}
                 {{ html()->label("Email",'email') }}
+                @include('app.layout.common.form-error', ['field' => 'email'])
             </div>
             <button type="submit" class="btn btn-primary w-100">
                 Réinitialiser le mot de passe
