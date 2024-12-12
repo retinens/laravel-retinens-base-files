@@ -6,6 +6,7 @@ use App\Auth\Controllers\LoginController;
 use App\Auth\Controllers\RegisterController;
 use App\Auth\Controllers\ResetPasswordController;
 use App\Auth\Controllers\VerificationController;
+use Illuminate\Support\Facades\Route;
 
 Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('login', [LoginController::class, 'login']);
